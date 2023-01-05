@@ -22,3 +22,8 @@ resource "aws_subnet" "subnet2" {
     Name = "subnet2"
   }
 }
+
+module "s3"{
+    source = "./modules/s3"
+    bucket-name = "globalnamebucketrsmb"
+}
