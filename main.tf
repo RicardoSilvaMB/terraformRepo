@@ -8,8 +8,8 @@ terraform {
 }
 
 provider "aws" {
-  profile = "default"
-  region  = "us-west-1"
+  profile = "terraform"
+  region  = "eu-west-1"
 }
 
 resource "aws_vpc" "vpc1" {
