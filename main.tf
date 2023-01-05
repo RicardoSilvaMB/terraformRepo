@@ -1,1 +1,7 @@
-EU SOU O MAIOR. HOJE FOI 50 KG DE TRICEP :))
+resource "aws_vpc" "vpc1" {
+    cidr_block = "10.0.0.0/16"
+
+    tags = {
+        name = "vpc1"
+    }
+}
