@@ -5,6 +5,12 @@ terraform {
       version = "~> 3.27"
     }
   }
+
+  backend "s3" {
+    bucket = "thiswillsavemytfstatersmb"
+    key    = "keystate"
+    region = "eu-west-1"
+  }
 }
 
 provider "aws" {
@@ -16,3 +22,5 @@ provider "aws" {
     }
   }
 }
+
+
