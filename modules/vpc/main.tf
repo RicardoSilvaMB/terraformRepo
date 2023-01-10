@@ -1,13 +1,9 @@
 resource "aws_vpc" "vpc1" {
   cidr_block = var.cidr-block
 
-  tags = merge(
-    {
-      "Name" = format("%s", var.nameresource)
-    },
-    var.tagsAll
-  )
-
+  tags = {
+    Name = "vpc1"
+  }
 }
 
 resource "aws_internet_gateway" "IGW_1" {
