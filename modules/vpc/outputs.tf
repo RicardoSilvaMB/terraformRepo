@@ -1,4 +1,4 @@
-output "cidr-block" {
-  value = aws_vpc.vpc1.cidr_block
+output "vpc" {
+  value = aws_vpc.vpc1
 }
 

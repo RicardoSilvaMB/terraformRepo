@@ -1,6 +1,6 @@
 module "vpc" {
   source     = "./modules/vpc"
-  cidr-block = "10.0.0.0/16"
+  cidr-block = "10.50.0.0/16"
 }
 
 module "s3" {
@@ -10,7 +10,7 @@ module "s3" {
 
 module "ec2" {
   source = "./modules/ec2"
-
+  
   for_each = var.ec2
 
   ami = each.value.ami
@@ -18,5 +18,6 @@ module "ec2" {
   security_groups = each.value.security_groups
   subnet_id = each.value.subnet_id
   key_name = each.value.key_name
+  associate_public_ip_address = each.value.associate_public_ip_address
 }
 

@@ -15,7 +15,7 @@ resource "aws_internet_gateway" "IGW_1" {
 
 resource "aws_subnet" "Public_Subnet" {
   vpc_id = aws_vpc.vpc1.id
-  cidr_block = "10.0.23.0/16"
+  cidr_block = "10.50.23.0/24"
   map_public_ip_on_launch = true
   tags = {
     "Name" = "Public_Subnet"
@@ -24,12 +24,13 @@ resource "aws_subnet" "Public_Subnet" {
 
 resource "aws_subnet" "Private_Subnet" {
   vpc_id = aws_vpc.vpc1.id
-  cidr_block = "10.0.24.0/16"
+  cidr_block = "10.50.64.0/24"
   tags = {
     "Name" = "Private_Subnet"
   }
 }
 
+/*
 resource "aws_security_group" "SG_APP"{
   name        = "SG_APP"
   description = "Allow only SSH from Bastion Host"
@@ -54,7 +55,7 @@ resource "aws_security_group" "SG_Bastion_Host"{
     protocol         = "ssh"
     cidr_blocks      = ["0.0.0.0/0"]
   }
-}
+}*/
 
 resource "aws_route_table" "name" {
   vpc_id = aws_vpc.vpc1.id
